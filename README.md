@@ -3,19 +3,23 @@
 ### Purpose: Allow SISTER HySDS system to allow STAC catalogs and items as inputs and outputs for a PGE.
 
 ## Requirements:
+Check `envs` directory
+
 - Conda (23.1.0+)
-    - conda env yml: `sister-stac-env.yml` 
+    - conda env yml: `./envs/sister-stac-env.yml` 
 - Python (3.7+)
-    - python env requirements.txt: `requirements.txt`
+    - python env requirements.txt: `./envs/requirements.txt`
 
 ## Scripts:
+Check `scripts` directory
+
 - ### read_stac.py
     - Purpose: Outline details of STAC Catalog
     - Input: String of remote/local STAC catalog path 
     - Output: Print of Catalog ID, title, description, and items
     - Usage: 
     ```
-    $ python read_stac.py --help
+    $ python ./scripts/read_stac.py --help
     usage: read_stac.py [-h] catalog
 
     Outline details of STAC Catalog
@@ -34,7 +38,7 @@
     - Output: Local STAC Catalog of Input Catalog
     - Usage:
     ```
-    $ python remote_to_local_stac.py --help
+    $ python ./scripts/remote_to_local_stac.py --help
     usage: remote_to_local_stac.py [-h] -c CATALOG [-t TAG]
 
     Create a local STAC catalog output based on remote STAC catalog input.
@@ -54,7 +58,7 @@
     - Output: Remote (AWS S3) STAC Catalog of Input Catalog 
     - Usage:
     ```
-    $ python local_to_remote_stac.py --help
+    $ python ./scripts/local_to_remote_stac.py --help
     usage: local_to_remote_stac.py [-h] -c CATALOG [-t TAG] -s STORAGE
 
     Create a remote STAC catalog output based on local STAC catalog input.
@@ -75,13 +79,13 @@
 
 ## Examples:
 ### read_stac.py
-`$ python read_stac.py https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-stac/main/19TCH/2021/catalog.json`
+`$ python ./scripts/read_stac.py https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-stac/main/19TCH/2021/catalog.json`
 
 ### local_to_remote_stac.py
-`$ python local_to_remote_stac.py -c https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-stac/main/19TCH/2021/catalog.json -s s3://s3.us-west-2.amazonaws.com:80/sister-ops-workspace/stage_out/`
+`$ python ./scripts/local_to_remote_stac.py -c https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-stac/main/19TCH/2021/catalog.json -s s3://s3.us-west-2.amazonaws.com:80/sister-ops-workspace/stage_out/`
 
 ### remote_to_local_stac.py
-`$ python remote_to_local_stac.py -c https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-stac/main/19TCH/2021/catalog.json`
+`$ python ./scripts/remote_to_local_stac.py -c https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-stac/main/19TCH/2021/catalog.json`
 
 ## References:
 
