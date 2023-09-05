@@ -66,7 +66,7 @@ def main():
     # tmp_dir.cleanup()
 
     # put in S3
-    if put(tmp_dir, args.storage):
+    put(tmp_dir, args.storage)
     print("\nTransfered {} to {}".format(args.tag, args.storage))
 
 
@@ -107,10 +107,10 @@ def parser():
     Construct a parser to parse arguments
     @return argparse parser
     '''
-    parse = argparse.ArgumentParser(description="Create a stac ITEM json given a list of output files.")
-    parse.add_argument('-c', '--catalog', help='file containing list of paths to products (Example: https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-stac/main/19TCH/2021/catalog.json)', dest='catalog', required=True)
-    parse.add_argument('-t', '--tag', help='list of paths to products', dest='tag', default="remote-stac", required=False)
-    parse.add_argument('-s', '--storage', help='URL to remote storage location (Example: s3://s3.us-west-2.amazonaws.com:80/sister-ops-workspace/stage_out/)', default="s3://s3.us-west-2.amazonaws.com:80/sister-ops-workspace/stage_out/", dest='storage', required=True)
+    parse = argparse.ArgumentParser(description="Create a remote STAC catalog output based on local STAC catalog input.")
+    parse.add_argument('-c', '--catalog', help='Path to STAC catalog input (Example: https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-stac/main/19TCH/2021/catalog.json)', dest='catalog', required=True)
+    parse.add_argument('-t', '--tag', help='Name/ID for STAC catalog output [default: "remote-stac"]', dest='tag', default="remote-stac", required=False)
+    parse.add_argument('-s', '--storage', help='URL to remote storage location [default: s3://s3.us-west-2.amazonaws.com:80/sister-ops-workspace/stage_out/]', default="s3://s3.us-west-2.amazonaws.com:80/sister-ops-workspace/stage_out/", dest='storage', required=True)
     return parse
 
 

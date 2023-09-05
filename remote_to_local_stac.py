@@ -100,9 +100,9 @@ def parser():
     Construct a parser to parse arguments
     @return argparse parser
     '''
-    parse = argparse.ArgumentParser(description="Create a stac ITEM json given a list of output files.")
-    parse.add_argument('-c', '--catalog', help='file containing list of paths to products (Example: https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-stac/main/19TCH/2021/catalog.json)', dest='catalog', required=True)
-    parse.add_argument('-t', '--tag', help='list of paths to products', dest='tag', default="local-stac", required=False)
+    parse = argparse.ArgumentParser(description="Create a local STAC catalog output based on remote STAC catalog input.")
+    parse.add_argument('-c', '--catalog', help='File containing list of paths to products (Example: https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-stac/main/19TCH/2021/catalog.json)', dest='catalog', required=True)
+    parse.add_argument('-t', '--tag', help='Name/ID for STAC catalog [default: "local-stac"]', dest='tag', default="local-stac", required=False)
     return parse
 
 

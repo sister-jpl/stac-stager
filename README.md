@@ -13,14 +13,65 @@
     - Purpose: Outline details of STAC Catalog
     - Input: String of remote/local STAC catalog path 
     - Output: Print of Catalog ID, title, description, and items
+    - Usage: 
+    ```
+    $ python read_stac.py --help
+    usage: read_stac.py [-h] catalog
+
+    Outline details of STAC Catalog
+
+    positional arguments:
+    catalog     Remote or local STAC catalog path (example:
+                https://raw.githubusercontent.com/scottyhq/sentinel1-rtc-
+                stac/main/19TCH/2021/catalog.json)
+
+    optional arguments:
+    -h, --help  show this help message and exit
+    ```
 - ### remote_to_local_stac.py
     - Purpose: Convert remote STAC catalog to local STAC catalog
     - Input: String of remote STAC catalog URL
     - Output: Local STAC Catalog of Input Catalog
+    - Usage:
+    ```
+    $ python remote_to_local_stac.py --help
+    usage: remote_to_local_stac.py [-h] -c CATALOG [-t TAG]
+
+    Create a local STAC catalog output based on remote STAC catalog input.
+
+    optional arguments:
+    -h, --help            show this help message and exit
+    -c CATALOG, --catalog CATALOG
+                            File containing list of paths to products (Example: ht
+                            tps://raw.githubusercontent.com/scottyhq/sentinel1-rtc
+                            -stac/main/19TCH/2021/catalog.json)
+    -t TAG, --tag TAG     Name/ID for STAC catalog [default: "local-stac"]
+    ```
+
 - ### local_to_remote_stac.py
     - Purpose: Convert local STAC catalog to remote STAC catalog and store in AWS S3 bucket.
     - Input: String of local STAC catalog path
     - Output: Remote (AWS S3) STAC Catalog of Input Catalog 
+    - Usage:
+    ```
+    $ python local_to_remote_stac.py --help
+    usage: local_to_remote_stac.py [-h] -c CATALOG [-t TAG] -s STORAGE
+
+    Create a remote STAC catalog output based on local STAC catalog input.
+
+    optional arguments:
+    -h, --help            show this help message and exit
+    -c CATALOG, --catalog CATALOG
+                            Path to STAC catalog input (Example: https://raw.githu
+                            busercontent.com/scottyhq/sentinel1-rtc-
+                            stac/main/19TCH/2021/catalog.json)
+    -t TAG, --tag TAG     Name/ID for STAC catalog output [default: "remote-
+                            stac"]
+    -s STORAGE, --storage STORAGE
+                            URL to remote storage location [default: s3://s3.us-
+                            west-2.amazonaws.com:80/sister-ops-
+                            workspace/stage_out/]
+    ```
 
 ## Examples:
 ### read_stac.py
