@@ -1,9 +1,9 @@
 # sister-stac
 
-### Purpose: Allow SISTER HySDS system to allow STAC catalogs and items as inputs and outputs for a PGE.
+##### Purpose: Allow SISTER HySDS system to allow STAC catalogs and items as inputs and outputs for a PGE.
 
 ## Requirements:
-Check `envs` directory
+Enviornment files are in `envs` directory
 
 - Conda (23.1.0+)
     - conda env yml: `./envs/sister-stac-env.yml` 
@@ -11,7 +11,7 @@ Check `envs` directory
     - python env requirements.txt: `./envs/requirements.txt`
 
 ## Scripts:
-Check `scripts` directory
+Scripts are in `scripts` directory
 
 - ### read_stac.py
     - Purpose: Outline details of STAC Catalog
