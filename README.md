@@ -1,4 +1,4 @@
-# sister-stac
+# stac-stager
 
 ##### Purpose: Allow SISTER HySDS system to allow STAC catalogs and items as inputs and outputs for a PGE.
 
@@ -6,7 +6,7 @@
 Enviornment files are in `envs` directory
 
 - Conda (23.1.0+)
-    - conda env yml: `./envs/sister-stac-env.yml` 
+    - conda env yml: `./envs/stac-stager-env.yml` 
 - Python (3.7+)
     - python env requirements.txt: `./envs/requirements.txt`
 
