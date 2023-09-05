@@ -1,6 +1,6 @@
 # stac-stager
 
-##### Purpose: Allow SISTER HySDS system to allow STAC catalogs and items as inputs and outputs for a PGE.
+##### Purpose: Allow STAC catalogs and items to be staged locally and remotelly from http and cloud services (AWS, Azure, GCP).
 
 ## Requirements:
 Enviornment files are in `envs` directory
